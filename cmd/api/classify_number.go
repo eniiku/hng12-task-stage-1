@@ -43,7 +43,7 @@ func (app *application) classifyNumber(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Fetch fun fact from Numbers API
-	numbersAPIURL := fmt.Sprintf("http://numbersapi.com/%d/trivia", number)
+	numbersAPIURL := fmt.Sprintf("http://numbersapi.com/%d/math", number)
 	resp, apiErr := http.Get(numbersAPIURL)
 	if apiErr != nil {
 		http.Error(w, "Failed to fetch number trivia", http.StatusInternalServerError)
